@@ -1,0 +1,1994 @@
+/* ── FarmerStatement Page ──────────────────────────────────────────────────── */
+
+.fs-page {
+  padding: 24px 32px;
+  min-height: 100%;
+}
+
+/* ── Page Header ── */
+.fs-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.fs-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-inter);
+  font-size: 13px;
+}
+
+.fs-breadcrumb-link {
+  color: var(--primary-green);
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+
+.fs-breadcrumb-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.fs-breadcrumb-chevron {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.fs-breadcrumb-current {
+  color: var(--text-gray);
+}
+
+.fs-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: var(--font-poppins);
+  margin: 0;
+}
+
+.fs-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Date selector ── */
+.fs-date-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  user-select: none;
+  transition: border-color 0.15s;
+}
+
+.fs-date-selector:hover {
+  border-color: var(--primary-green);
+}
+
+.fs-date-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 200;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.fs-date-option {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--text-dark);
+  cursor: pointer;
+  font-family: var(--font-inter);
+  transition: background 0.1s;
+}
+
+.fs-date-option:hover {
+  background: var(--background-light);
+}
+
+.fs-date-option--active {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.fs-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-poppins);
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.fs-back-btn:hover {
+  background: var(--primary-dark-green);
+}
+
+/* ── Profile Section ── */
+.fs-profile-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: stretch;
+}
+
+.fs-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 24px 28px;
+  min-width: 280px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.fs-avatar-wrapper {
+  flex-shrink: 0;
+}
+
+.fs-avatar-initials {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-poppins);
+  letter-spacing: 1px;
+}
+
+.fs-avatar-skeleton {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: fs-shimmer 1.4s infinite;
+}
+
+.fs-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fs-profile-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: var(--font-poppins);
+  margin-bottom: 8px;
+}
+
+.fs-profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.fs-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-profile-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── KPI Grid ── */
+.fs-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fs-kpi-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.fs-kpi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--secondary-green);
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.fs-kpi-icon-skeleton {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: fs-shimmer 1.4s infinite;
+}
+
+.fs-kpi-label {
+  font-size: 10px;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-inter);
+}
+
+.fs-kpi-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-green);
+  font-family: var(--font-poppins);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fs-kpi-subtext {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-kpi-trend {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-inter);
+}
+
+.fs-kpi-trend--up { color: var(--success-green); }
+.fs-kpi-trend--down { color: var(--error-red); }
+.fs-kpi-trend--flat { color: #6B7280; background: #F3F4F6; }
+
+/* ── Badges ── */
+.fs-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-inter);
+  white-space: nowrap;
+}
+
+.fs-badge--success { background: #E8F9EE; color: #23C55F; }
+.fs-badge--warning { background: #FFF7E6; color: #FF9800; }
+.fs-badge--error { background: #FEE2E2; color: #DC2626; }
+.fs-badge--info { background: #EBF5FF; color: #2196F3; }
+.fs-badge--default { background: #F3F4F6; color: #6B7280; }
+.fs-badge--category { background: #F0F7F0; color: #4CAF50; font-weight: 500; }
+
+/* ── Tab Navigation ── */
+.fs-tabs-nav {
+  display: flex;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  gap: 2px;
+}
+
+.fs-tabs-nav::-webkit-scrollbar { height: 0; }
+
+.fs-tab-btn {
+  flex-shrink: 0;
+  padding: 9px 18px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-gray);
+  font-family: var(--font-poppins);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.fs-tab-btn:hover {
+  background: var(--background-light);
+  color: var(--text-dark);
+}
+
+.fs-tab-btn--active {
+  background: var(--primary-green);
+  color: white;
+}
+
+/* ── Tab Content Wrapper ── */
+.fs-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Card Base ── */
+.fs-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fs-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fs-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-poppins);
+  margin: 0;
+}
+
+.fs-view-all-btn {
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-inter);
+  padding: 0;
+  white-space: nowrap;
+}
+
+.fs-view-all-btn:hover { text-decoration: underline; }
+
+.fs-link-btn {
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-inter);
+  padding: 4px 0;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.fs-link-btn:hover { text-decoration: underline; }
+
+/* ── Grid Layouts ── */
+
+/* 3-column analytics row */
+.fs-analytics-row--3col {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* Transactions 2/3 | Farm Summary 1/3 (kept for other tab uses) */
+.fs-analytics-row--tx {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Overview Bottom Unified Grid ──
+   Row 1: Harvests | Crop Scans | Carbon Trend
+   Row 2: Transactions (spans 2 cols) | Farm Summary
+   Farm Summary is ALWAYS visible in col 3 regardless of screen width ── */
+.fs-overview-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "harvests  cropscans  carbon"
+    "tx        tx         summary";
+  gap: 20px;
+}
+
+.fs-overview-harvests  { grid-area: harvests; }
+.fs-overview-cropscans { grid-area: cropscans; }
+.fs-overview-carbon    { grid-area: carbon; }
+.fs-overview-tx        { grid-area: tx; overflow: hidden; }
+.fs-overview-summary   { grid-area: summary; }
+
+/* Equal 2-column split */
+.fs-analytics-row--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Stats row for KPI mini cards */
+.fs-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.fs-stats-row--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Stat Mini Card ── */
+.fs-stat-mini {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.fs-stat-mini-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.fs-stat-mini-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-green);
+  font-family: var(--font-poppins);
+  line-height: 1.2;
+}
+
+.fs-stat-mini-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+}
+
+.fs-stat-mini-sub {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+/* ── Financial Chart ── */
+.fs-financial-chart {
+  position: relative;
+  height: 190px;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.fs-chart-svg {
+  width: 100%;
+  height: calc(100% - 22px);
+  display: block;
+}
+
+.fs-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fs-chart-tooltip {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 50;
+  min-width: 160px;
+  font-family: var(--font-inter);
+}
+
+.fs-tooltip-month {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.fs-tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-gray);
+  margin-bottom: 3px;
+}
+
+.fs-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fs-chart-x-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  margin-top: 4px;
+  height: 18px;
+}
+
+.fs-chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px 20px;
+  color: var(--text-gray);
+  font-size: 13px;
+  font-family: var(--font-inter);
+  text-align: center;
+  flex: 1;
+}
+
+/* ── Donut Chart ── */
+.fs-donut-chart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.fs-donut-svg {
+  flex-shrink: 0;
+}
+
+.fs-donut-slice {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.fs-donut-legend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fs-donut-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.fs-donut-legend-item:hover,
+.fs-donut-legend-item--active {
+  background: var(--background-light);
+}
+
+.fs-donut-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fs-donut-label-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.fs-donut-label {
+  font-size: 12px;
+  color: var(--text-dark);
+}
+
+.fs-donut-value {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.fs-donut-pct {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+/* ── Carbon Metrics (Overview) ── */
+.fs-carbon-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.fs-carbon-metric-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--background-light);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+.fs-carbon-metric-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fs-carbon-metric-icon--green { background: #E8F9EE; }
+.fs-carbon-metric-icon--teal  { background: #E0F2F1; }
+.fs-carbon-metric-icon--blue  { background: #EBF5FF; }
+
+.fs-carbon-metric-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fs-carbon-metric-label {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-carbon-metric-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: var(--font-poppins);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fs-carbon-metric-trend {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-inter);
+}
+
+.fs-carbon-metric-trend--up { color: var(--success-green); }
+.fs-carbon-metric-trend--down { color: var(--error-red); }
+
+/* ── Carbon Big Cards (Carbon Impact Tab) ── */
+.fs-carbon-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.fs-carbon-big-card {
+  border-radius: 16px;
+  border: 1px solid;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fs-carbon-big-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.fs-carbon-big-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.fs-carbon-big-value {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-poppins);
+  line-height: 1.2;
+}
+
+.fs-carbon-big-trend {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-inter);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.fs-carbon-big-trend--up   { color: var(--success-green); background: #F0FFF4; }
+.fs-carbon-big-trend--down { color: var(--error-red);     background: #FFF5F5; }
+.fs-carbon-big-trend--flat { color: #6B7280;              background: #F3F4F6; }
+
+/* ── Carbon Trend Chart ── */
+.fs-carbon-trend-chart {
+  position: relative;
+  height: 160px;
+  cursor: crosshair;
+  user-select: none;
+  flex: 1;
+}
+
+/* ── Carbon Monthly Grouped Bar Chart ── */
+.fs-monthly-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fs-monthly-bar-svg {
+  width: 100%;
+  height: 140px;
+  display: block;
+}
+
+.fs-monthly-bar-labels {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  padding: 0 2px;
+}
+
+.fs-monthly-bar-labels span {
+  text-align: center;
+  flex: 1;
+}
+
+/* (kept for any legacy references) */
+.fs-carbon-monthly-val {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  width: 72px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Certificate Card ── */
+.fs-certificate-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #F0F7F0 0%, #E8F9EE 100%);
+  border: 1px solid #C8F0D0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.fs-certificate-icon {
+  width: 64px;
+  height: 64px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.fs-certificate-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.fs-certificate-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fs-certificate-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: var(--font-poppins);
+}
+
+.fs-certificate-desc {
+  font-size: 12px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  line-height: 1.5;
+}
+
+/* ── Chart Skeletons ── */
+.fs-chart-skeleton {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: fs-shimmer 1.4s infinite;
+}
+
+.fs-chart-skeleton--line { height: 190px; }
+.fs-chart-skeleton--donut { height: 160px; width: 160px; border-radius: 50%; align-self: center; }
+
+/* ── Skeleton Components ── */
+.fs-skeleton-line {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: fs-shimmer 1.4s infinite;
+  display: block;
+}
+
+.fs-skeleton-card {
+  padding: 12px;
+  background: var(--background-light);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Scan List ── */
+.fs-scan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.fs-scan-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: var(--background-light);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.fs-scan-item:hover {
+  background: #EBF5EB;
+}
+
+.fs-scan-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.fs-scan-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fs-scan-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.fs-scan-field {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fs-scan-date {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-scan-confidence {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fs-scan-skeleton {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  background: var(--background-light);
+  border-radius: 8px;
+}
+
+.fs-scan-thumb-skeleton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: fs-shimmer 1.4s infinite;
+  flex-shrink: 0;
+}
+
+/* ── Health Distribution ── */
+.fs-health-dist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.fs-health-dist-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fs-health-dist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fs-health-dist-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fs-health-dist-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fs-health-dist-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+}
+
+.fs-health-dist-count {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-poppins);
+}
+
+.fs-health-dist-pct {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-gray);
+}
+
+.fs-health-dist-bar-track {
+  height: 8px;
+  background: var(--background-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fs-health-dist-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.fs-health-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--background-light);
+  border: 1px solid var(--border-light);
+  margin-top: 4px;
+}
+
+.fs-health-summary-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fs-health-summary-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-poppins);
+}
+
+.fs-health-summary-desc {
+  font-size: 12px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+  margin-top: 2px;
+}
+
+/* ── Harvest Compact Table ── */
+.fs-harvest-table-wrap {
+  overflow-x: auto;
+  flex: 1;
+}
+
+.fs-harvest-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-inter);
+  min-width: 360px;
+}
+
+.fs-harvest-table th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B7280;
+  padding: 0 10px 10px;
+  text-align: left;
+  border-bottom: 1px solid #F3F4F6;
+  white-space: nowrap;
+}
+
+.fs-th-right {
+  text-align: right !important;
+}
+
+.fs-harvest-table td {
+  font-size: 13px;
+  color: #374151;
+  padding: 9px 10px;
+  border-bottom: 1px solid #F3F4F6;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.fs-harvest-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.fs-harvest-row {
+  transition: background 0.12s;
+}
+
+.fs-harvest-row:hover td {
+  background: #F9FAFB;
+}
+
+.fs-harvest-crop-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.fs-harvest-crop-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16A34A;
+  flex-shrink: 0;
+}
+
+.fs-harvest-unit-cell {
+  color: #9CA3AF !important;
+  font-size: 12px !important;
+}
+
+.fs-td-right {
+  text-align: right;
+}
+
+.fs-harvest-income-cell {
+  color: #16A34A !important;
+  font-weight: 500;
+  text-align: right;
+}
+
+.fs-harvest-dummy-note {
+  font-size: 10px;
+  color: #9CA3AF;
+  font-family: var(--font-inter);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ── Footer link (shared: harvest + carbon) ── */
+.fs-card-footer-center {
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.fs-footer-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: #16A34A;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+
+.fs-footer-link-btn:hover {
+  color: #15803D;
+}
+
+.fs-footer-link-arrow {
+  transition: transform 0.2s ease;
+}
+
+.fs-footer-link-btn:hover .fs-footer-link-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Period selector (Carbon Trend card) ── */
+.fs-period-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  font-family: var(--font-inter);
+  user-select: none;
+  transition: border-color 0.15s;
+}
+
+.fs-period-selector:hover {
+  border-color: #16A34A;
+}
+
+.fs-period-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  min-width: 110px;
+  overflow: hidden;
+}
+
+.fs-period-option {
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #374151;
+  cursor: pointer;
+  font-family: var(--font-inter);
+  transition: background 0.1s;
+}
+
+.fs-period-option:hover {
+  background: #F9FAFB;
+}
+
+.fs-period-option--active {
+  color: #16A34A;
+  font-weight: 600;
+}
+
+/* ── Carbon Series Legend ── */
+.fs-carbon-series-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.fs-carbon-series-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #6B7280;
+  font-family: var(--font-inter);
+}
+
+.fs-carbon-series-mark {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Dual Carbon Wrap ── */
+.fs-carbon-trend-card {
+  gap: 12px;
+}
+
+.fs-dual-carbon-wrap {
+  display: flex;
+  align-items: stretch;
+  height: 260px;
+  flex: 1;
+}
+
+/* Y-axis labels column */
+.fs-carbon-yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 14px 6px 24px 0;
+  flex-shrink: 0;
+  width: 42px;
+}
+
+.fs-carbon-yaxis-label {
+  font-size: 10px;
+  color: #9CA3AF;
+  font-family: var(--font-inter);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Chart area (SVG + tooltip + x labels) */
+.fs-carbon-chart-inner {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.fs-carbon-chart-inner .fs-chart-svg {
+  width: 100%;
+  height: calc(100% - 22px);
+  display: block;
+}
+
+.fs-carbon-tooltip {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 50;
+  min-width: 190px;
+  font-family: var(--font-inter);
+}
+
+/* ── Harvest Crop List ── */
+.fs-harvest-crop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.fs-harvest-crop-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--background-light);
+  border-radius: 8px;
+}
+
+.fs-harvest-crop-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--secondary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fs-harvest-crop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 120px;
+}
+
+.fs-harvest-crop-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+}
+
+.fs-harvest-crop-stat {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-harvest-crop-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fs-harvest-crop-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #66BB6A);
+  border-radius: 3px;
+}
+
+/* ── Table Empty State ── */
+.fs-table-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 20px;
+  color: var(--text-gray);
+  font-size: 13px;
+  font-family: var(--font-inter);
+  text-align: center;
+  flex: 1;
+}
+
+.fs-empty-hint {
+  font-size: 11px;
+  color: #9CA3AF;
+}
+
+/* ── Transaction Card ── */
+.fs-card--transactions {
+  min-height: 0;
+}
+
+/* Overview tab transactions card: scroll the table, not the card */
+.fs-card--transactions-overview .fs-tx-table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+.fs-card--transactions-overview .fs-tx-table-wrapper::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.fs-card--transactions-overview .fs-tx-table-wrapper::-webkit-scrollbar-track {
+  background: var(--background-light);
+  border-radius: 3px;
+}
+
+.fs-card--transactions-overview .fs-tx-table-wrapper::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+
+.fs-card--transactions-overview .fs-tx-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+.fs-tx-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fs-tx-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fs-tx-filter-btn {
+  padding: 6px 14px;
+  background: var(--background-light);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray);
+  cursor: pointer;
+  font-family: var(--font-inter);
+  transition: all 0.2s;
+}
+
+.fs-tx-filter-btn:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.fs-tx-filter-btn--active {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  color: white;
+}
+
+.fs-tx-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fs-tx-search-icon {
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+}
+
+.fs-tx-search-input {
+  padding: 8px 14px 8px 36px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: var(--font-inter);
+  color: var(--text-dark);
+  background: var(--background-light);
+  outline: none;
+  width: 220px;
+  transition: border-color 0.15s, width 0.2s;
+}
+
+.fs-tx-search-input:focus {
+  border-color: var(--primary-green);
+  background: white;
+  width: 260px;
+}
+
+.fs-tx-search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.fs-tx-table-wrapper {
+  overflow-x: auto;
+}
+
+.fs-tx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-inter);
+  font-size: 13px;
+  min-width: 560px;
+}
+
+.fs-tx-table th {
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--text-light);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 2px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.fs-tx-table td {
+  padding: 12px;
+  color: var(--text-dark);
+  border-bottom: 1px solid #F3F4F6;
+  vertical-align: middle;
+}
+
+.fs-tx-row { transition: background 0.15s; }
+.fs-tx-row:hover td { background: var(--background-light); }
+
+.fs-tx-date   { color: var(--text-gray); font-size: 12px; white-space: nowrap; }
+.fs-tx-desc   { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fs-tx-method { color: var(--text-gray); font-size: 12px; white-space: nowrap; }
+.fs-tx-balance { color: var(--text-gray); white-space: nowrap; }
+
+.fs-tx-type {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.fs-tx-type--income  { color: #23C55F; background: #E8F9EE; }
+.fs-tx-type--expense { color: #DC2626; background: #FEE2E2; }
+
+.fs-amount-positive { color: var(--success-green); font-weight: 600; white-space: nowrap; }
+.fs-amount-negative { color: var(--error-red); font-weight: 600; white-space: nowrap; }
+
+.fs-tx-skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fs-tx-skeleton-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+/* ── Mini Transaction List (Financials tab) ── */
+.fs-mini-tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.fs-mini-tx-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.fs-mini-tx-row:hover {
+  background: var(--background-light);
+}
+
+.fs-mini-tx-type-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fs-mini-tx-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fs-mini-tx-desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fs-mini-tx-date {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+/* ── Farm Summary Card ── */
+.fs-card--farm-summary {
+  min-height: 0;
+}
+
+.fs-farm-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.fs-farm-metric-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  background: var(--background-light);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.fs-farm-metric-row:hover {
+  background: #EBF5EB;
+}
+
+.fs-farm-metric-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: var(--secondary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fs-farm-icon-skeleton {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: fs-shimmer 1.4s infinite;
+  flex-shrink: 0;
+}
+
+.fs-farm-metric-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.fs-farm-metric-label {
+  font-size: 11px;
+  color: var(--text-gray);
+  font-family: var(--font-inter);
+}
+
+.fs-farm-metric-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  word-break: break-word;
+}
+
+/* ── Shimmer Animation ── */
+@keyframes fs-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Responsive ── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+/* Wide laptop */
+@media (max-width: 1280px) {
+  .fs-analytics-row--3col {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+
+  .fs-kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Explicit: keep tx grid locked to 2/3 + 1/3 */
+  .fs-analytics-row--tx {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Medium laptop / tablet landscape */
+@media (max-width: 1200px) {
+  .fs-profile-section {
+    flex-direction: column;
+  }
+
+  .fs-profile-card {
+    min-width: unset;
+  }
+
+  .fs-kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+    flex: unset;
+  }
+
+  /* Explicit: keep tx grid locked to 2/3 + 1/3 */
+  .fs-analytics-row--tx {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Narrow laptop / small tablet */
+@media (max-width: 1100px) {
+  .fs-analytics-row--3col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fs-analytics-row--3col .fs-card:first-child {
+    grid-column: span 2;
+  }
+
+  /* Explicit: keep tx grid locked to 2/3 + 1/3 — NEVER collapse until mobile */
+  .fs-analytics-row--tx {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /* Bottom unified grid: collapse harvests into 2-col, tx still spans 2 */
+  .fs-overview-bottom-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "harvests  cropscans"
+      "carbon    carbon"
+      "tx        tx"
+      "summary   summary";
+  }
+
+  .fs-carbon-overview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fs-carbon-overview-grid .fs-carbon-big-card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .fs-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fs-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fs-stats-row--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Explicit: still keep tx grid 2-col on tablets */
+  .fs-analytics-row--tx {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .fs-analytics-row--split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .fs-page {
+    padding: 16px;
+  }
+
+  .fs-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fs-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .fs-profile-section {
+    flex-direction: column;
+  }
+
+  .fs-profile-card {
+    min-width: unset;
+  }
+
+  .fs-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .fs-analytics-row--3col {
+    grid-template-columns: 1fr;
+  }
+
+  .fs-analytics-row--3col .fs-card:first-child {
+    grid-column: span 1;
+  }
+
+  .fs-analytics-row--tx {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bottom unified grid: full single-column stack on mobile */
+  .fs-overview-bottom-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "harvests"
+      "cropscans"
+      "carbon"
+      "tx"
+      "summary";
+  }
+
+  .fs-card--transactions-overview .fs-tx-table-wrapper {
+    max-height: unset;
+    overflow-y: unset;
+  }
+
+  .fs-analytics-row--split {
+    grid-template-columns: 1fr;
+  }
+
+  .fs-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fs-stats-row--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fs-carbon-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fs-carbon-overview-grid .fs-carbon-big-card:last-child {
+    grid-column: span 1;
+  }
+
+  .fs-tabs-nav {
+    padding: 3px;
+  }
+
+  .fs-tab-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .fs-page-title {
+    font-size: 20px;
+  }
+
+  .fs-tx-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fs-tx-search-input {
+    width: 180px;
+  }
+
+  .fs-tx-search-input:focus {
+    width: 200px;
+  }
+
+  .fs-certificate-card {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .fs-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fs-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fs-stats-row--3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fs-donut-chart-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

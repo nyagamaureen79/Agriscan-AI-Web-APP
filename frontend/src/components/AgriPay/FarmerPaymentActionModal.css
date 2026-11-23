@@ -1,0 +1,377 @@
+.farmer-payment-action-modal {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.farmer-payment-action-modal .modal-header {
+  padding: 24px;
+  border-bottom: 1px solid #E1E7EF;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header-content {
+  flex: 1;
+}
+
+.farmer-payment-action-modal .modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0B0324;
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 12px 0;
+}
+
+.farmer-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.farmer-icon {
+  width: 40px;
+  height: 40px;
+  background: #E8F9EE;
+  color: #4CAF50;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.farmer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.farmer-info strong {
+  font-size: 16px;
+  color: #0B0324;
+  font-family: 'Poppins', sans-serif;
+}
+
+.farmer-phone {
+  font-size: 14px;
+  color: #65758B;
+  font-family: 'Poppins', sans-serif;
+}
+
+.farmer-payment-action-modal .modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #65758B;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.farmer-payment-action-modal .modal-close:hover:not(:disabled) {
+  color: #0B0324;
+  background: #F5F8F7;
+}
+
+.farmer-payment-action-modal .modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.farmer-info-card {
+  background: #F5F8F7;
+  border: 1px solid #E1E7EF;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #65758B;
+  font-family: 'Poppins', sans-serif;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #0B0324;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-badge.status-active {
+  background: #E8F9EE;
+  color: #21C45D;
+}
+
+.status-badge.status-verified {
+  background: #EFF6FF;
+  color: #3B82F6;
+}
+
+.status-badge.status-pending {
+  background: #FEF2F2;
+  color: #F59E0B;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #0B0324;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.required {
+  color: #DC2626;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #65758B;
+  font-size: 18px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #E1E7EF;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #0B0324;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-input.error {
+  border-color: #DC2626;
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-input:disabled {
+  background: #F5F8F7;
+  cursor: not-allowed;
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #E1E7EF;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #0B0324;
+  background: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-select:disabled {
+  background: #F5F8F7;
+  cursor: not-allowed;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #E1E7EF;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #0B0324;
+  resize: vertical;
+  min-height: 80px;
+  transition: all 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-textarea:disabled {
+  background: #F5F8F7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #DC2626;
+  font-family: 'Poppins', sans-serif;
+  margin-top: -4px;
+}
+
+.error-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #FEF2F2;
+  border: 1px solid #DC2626;
+  border-radius: 10px;
+  color: #DC2626;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: #FFFFFF;
+  color: #0B0324;
+  border: 1px solid #E1E7EF;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #F5F8F7;
+}
+
+.btn-submit {
+  background: #4CAF50;
+  color: #FFFFFF;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #45A049;
+  box-shadow: 0 4px 6px -1px rgba(76, 175, 80, 0.2);
+}
+
+.button-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #FFFFFF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .farmer-payment-action-modal {
+    max-width: 95vw;
+    margin: 10px;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-title {
+    font-size: 20px !important;
+  }
+
+  .farmer-info strong {
+    font-size: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

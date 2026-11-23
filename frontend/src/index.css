@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --primary-green: #4CAF50;
+  --primary-dark-green: #245421;
+  --background-white: #FFFFFF;
+  --background-light: #F5F8F7;
+  --text-dark: #0B0324;
+  --text-medium: #323639;
+  --text-light: #65758B;
+  --border-light: #E1E7EF;
+  --error-red: #DC2626;
+
+  /* Fonts */
+  --font-poppins: 'Poppins', -apple-system, Roboto, Helvetica, sans-serif;
+  --font-inter: 'Inter', -apple-system, Roboto, Helvetica, sans-serif;
+
+  /* Rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, Roboto, Helvetica, sans-serif;
+  background-color: #F5F8F7;
+  color: #0B0324;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4CAF50;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #245421;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+/* Button reset */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Link reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* List reset */
+ul, ol {
+  list-style: none;
+}
+
+/* Image reset */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form element reset */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}

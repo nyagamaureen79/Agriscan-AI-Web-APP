@@ -1,0 +1,984 @@
+/* ═══════════════════════════════════════════════
+   YIELD INSIGHTS PAGE STYLES
+   Prefix: yi-
+═══════════════════════════════════════════════ */
+
+/* ── Page Layout ─────────────────────────────── */
+.yi-page {
+  padding: 1.5rem;
+}
+
+/* ── Page Header ─────────────────────────────── */
+.yi-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.yi-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.25rem;
+}
+
+.yi-page-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.yi-page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.yi-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.yi-export-btn:hover {
+  background: #43A047;
+}
+
+/* ── Mock / preview-data badge ───────────────── */
+.yi-mock-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #92400E;
+  background: #FEF3C7;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ── KPI Grid ────────────────────────────────── */
+.yi-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── KPI Card Base ───────────────────────────── */
+.yi-kpi-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.125rem 1rem 0.875rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  border: 1px solid #f1f5f9;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.yi-kpi-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.yi-kpi-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.375rem;
+}
+
+.yi-kpi-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.yi-kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+  margin-top: 0.125rem;
+}
+
+.yi-kpi-label {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.yi-kpi-sub {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+}
+
+/* Gauge card layout */
+.yi-kpi-card--gauge .yi-gauge-layout {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.yi-kpi-card--highlight {
+  border-color: #e5e7eb;
+  justify-content: center;
+}
+
+.yi-gauge-layout--center {
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.yi-gauge-details--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  text-align: center;
+}
+
+.yi-gauge-status-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ── Skeleton Loaders ────────────────────────── */
+.yi-skeleton {
+  background: linear-gradient(90deg, #f0f2f5 25%, #e5e7eb 50%, #f0f2f5 75%);
+  background-size: 200% 100%;
+  animation: yi-shimmer 1.4s infinite;
+  border-radius: 6px;
+  display: block;
+}
+
+.yi-skeleton-val {
+  width: 70px;
+  height: 28px;
+}
+
+.yi-skeleton-chart {
+  width: 100%;
+  height: 140px;
+}
+
+@keyframes yi-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Analytics Rows ──────────────────────────── */
+.yi-analytics-row {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.yi-row--trend {
+  grid-template-columns: 2fr 1fr;
+}
+
+.yi-row--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.yi-row--season {
+  grid-template-columns: 1fr;
+}
+
+.yi-row--medals {
+  grid-template-columns: 1fr 1fr;
+}
+
+.yi-row--split {
+  grid-template-columns: 1.6fr 1fr;
+}
+
+/* ── Chart Card ──────────────────────────────── */
+.yi-chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  border: 1px solid #f1f5f9;
+}
+
+.yi-chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.yi-chart-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.yi-chart-subtitle {
+  font-size: 0.775rem;
+  color: #6b7280;
+}
+
+.yi-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.775rem;
+}
+
+.yi-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.yi-legend-label {
+  color: #6b7280;
+}
+
+.yi-legend-val {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Empty state */
+.yi-chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1rem;
+  color: #9CA3AF;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+/* Tooltip */
+.yi-tooltip {
+  position: fixed;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  min-width: 140px;
+  pointer-events: none;
+}
+
+.yi-tooltip-month {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.375rem;
+}
+
+.yi-tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.yi-tooltip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.yi-tooltip-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  flex: 1;
+}
+
+.yi-tooltip-val {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── AI Insights Card ────────────────────────── */
+.yi-ai-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.yi-ai-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.yi-ai-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.yi-ai-subtitle {
+  font-size: 0.775rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.yi-ai-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 360px;
+}
+
+.yi-ai-item {
+  display: flex;
+  gap: 0.625rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.yi-ai-item-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.yi-ai-item-title {
+  font-size: 0.775rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.yi-ai-item-text {
+  font-size: 0.7375rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+/* ── Bar Chart Card ──────────────────────────── */
+.yi-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1rem;
+}
+
+.yi-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.yi-bar-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.yi-bar-rank {
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 22px;
+}
+
+.yi-bar-label {
+  flex: 1;
+  font-size: 0.8rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.yi-bar-count {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.yi-bar-track {
+  height: 7px;
+  background: #f0f2f5;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.yi-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+.yi-bar-pct {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+  text-align: right;
+  align-self: flex-end;
+}
+
+/* ── Segment Card (Achievement Distribution) ─── */
+.yi-segment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin: 0.75rem 0;
+}
+
+.yi-segment-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 6px;
+  cursor: default;
+  transition: background 0.15s;
+}
+
+.yi-segment-row:hover {
+  background: #fafafa;
+}
+
+.yi-segment-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.yi-segment-label {
+  flex: 1;
+  font-size: 0.8rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.yi-segment-count {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.yi-segment-bar-track {
+  height: 6px;
+  background: #f0f2f5;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.yi-segment-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+.yi-segment-pct {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+  text-align: right;
+}
+
+.yi-segment-total {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.775rem;
+  color: #6b7280;
+}
+
+/* ── Farmers Needing Intervention Card ───────── */
+.yi-intervention-card {
+  margin-top: 0;
+}
+
+.yi-intervention-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.yi-intervention-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.yi-intervention-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FEF2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.yi-intervention-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #B91C1C;
+  background: #FEE2E2;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.yi-intervention-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.yi-intervention-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #FAFAFA;
+  border-radius: 10px;
+  border: 1px solid #F3F4F6;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.yi-intervention-item:hover {
+  background: #F9FAFB;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.yi-intervention-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.yi-intervention-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.yi-intervention-name {
+  font-size: 0.8375rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.15rem;
+}
+
+.yi-intervention-regno {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #9CA3AF;
+}
+
+.yi-intervention-meta {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-bottom: 0.5rem;
+}
+
+.yi-intervention-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.yi-intervention-bar-track {
+  flex: 1;
+  height: 6px;
+  background: #F3F4F6;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.yi-intervention-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+.yi-intervention-pct {
+  font-size: 0.7rem;
+  color: #6B7280;
+  white-space: nowrap;
+  min-width: 84px;
+  text-align: right;
+}
+
+.yi-intervention-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.625rem;
+  background: none;
+  border: 1px dashed #D1D5DB;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6B7280;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.yi-intervention-toggle:hover {
+  border-color: #EF4444;
+  color: #EF4444;
+  background: #FEF2F2;
+}
+
+/* ── Top Performing Counties (medal leaderboard) ─ */
+.yi-medal-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+.yi-medal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: default;
+  transition: background 0.15s;
+}
+
+.yi-medal-item:hover {
+  background: #fafafa;
+}
+
+.yi-medal-rank-badge {
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.yi-medal-county {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.yi-medal-sub {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+}
+
+/* ── Crop Mix Donut Chart ─────────────────────── */
+.yi-donut-layout {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.yi-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.yi-donut-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.yi-donut-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.yi-donut-label {
+  flex: 1;
+  font-size: 0.8rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.yi-donut-pct {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── County Performance Grouped Bar Chart ─────── */
+.yi-grouped-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.yi-grouped-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 6px;
+  cursor: default;
+  transition: background 0.15s;
+}
+
+.yi-grouped-bar-row:hover {
+  background: #fafafa;
+}
+
+.yi-grouped-bar-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yi-grouped-bar-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.yi-grouped-bar-achievement {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 20px;
+}
+
+.yi-ach-high {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.yi-ach-mid {
+  background: #FEF9C3;
+  color: #CA8A04;
+}
+
+.yi-ach-low {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.yi-grouped-bar-track {
+  height: 6px;
+  background: #f0f2f5;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.yi-grouped-bar-track + .yi-grouped-bar-track {
+  margin-top: 0.2rem;
+}
+
+.yi-grouped-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+.yi-grouped-bar-fill--expected {
+  background: #94a3b8;
+}
+
+.yi-grouped-bar-fill--actual {
+  background: #4CAF50;
+}
+
+/* ── Farm Size vs. Achievement Scatter ────────── */
+.yi-scatter-card {
+  margin-bottom: 1.25rem;
+}
+
+/* ── Season Comparison Card ───────────────────── */
+.yi-season-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.yi-season-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  text-align: center;
+}
+
+.yi-season-label {
+  font-size: 0.775rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.yi-season-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #9CA3AF;
+}
+
+.yi-season-value--current {
+  color: #111827;
+}
+
+.yi-season-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.yi-season-arrow--up {
+  color: #16A34A;
+}
+
+.yi-season-arrow--down {
+  color: #DC2626;
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 1400px) {
+  .yi-kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .yi-row--trend {
+    grid-template-columns: 1fr;
+  }
+
+  .yi-row--three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .yi-row--split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .yi-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .yi-row--three {
+    grid-template-columns: 1fr;
+  }
+
+  .yi-row--medals {
+    grid-template-columns: 1fr;
+  }
+
+  .yi-medal-row {
+    flex-wrap: wrap;
+  }
+
+  .yi-season-compare {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .yi-page {
+    padding: 1rem;
+  }
+
+  .yi-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .yi-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .yi-page-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .yi-kpi-value {
+    font-size: 1.25rem;
+  }
+
+  .yi-analytics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .yi-season-compare {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

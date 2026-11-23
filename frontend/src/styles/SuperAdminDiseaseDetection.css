@@ -1,0 +1,126 @@
+/* SuperAdmin Disease Detection Page */
+.sa-disease-page {
+  width: 100%;
+}
+
+/* Red and orange stat icon variants */
+.sa-stat-icon--red {
+  background: rgba(239, 67, 67, 0.12);
+  color: #ef4343;
+}
+
+.sa-stat-icon--orange {
+  background: rgba(245, 159, 10, 0.12);
+  color: #f59f0a;
+}
+
+/* Disease icon cell */
+.sa-detection-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(239, 67, 67, 0.1);
+  color: #ef4343;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Severity badges */
+.sa-detection-severity {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sa-detection-severity--high {
+  background: rgba(239, 67, 67, 0.1);
+  color: #ef4343;
+}
+
+.sa-detection-severity--medium {
+  background: rgba(245, 159, 10, 0.12);
+  color: #f59f0a;
+}
+
+.sa-detection-severity--low {
+  background: rgba(76, 175, 80, 0.12);
+  color: #4caf50;
+}
+
+.sa-detection-severity--default {
+  background: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Confidence cell */
+.sa-confidence-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 90px;
+}
+
+.sa-confidence-value {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sa-confidence-bar {
+  height: 5px;
+  background: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  width: 80px;
+}
+
+.sa-confidence-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Date cell */
+.sa-date-cell {
+  font-size: 13px;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+/* Drawer detection icon */
+.sa-detection-drawer-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(239, 67, 67, 0.12);
+  color: #ef4343;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Drawer detection image */
+.sa-drawer-detection-image {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.sa-drawer-detection-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .sa-confidence-bar {
+    width: 60px;
+  }
+}

@@ -1,0 +1,106 @@
+/* SuperAdmin Carbon Analytics Page */
+.sa-carbon-page {
+  width: 100%;
+}
+
+/* Teal stat icon variant (reused pattern) */
+.sa-stat-icon--teal {
+  background: rgba(20, 184, 166, 0.12);
+  color: #14b8a6;
+}
+
+/* Farmer avatar in carbon table */
+.sa-carbon-farmer-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Carbon score badge */
+.sa-carbon-score {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sa-carbon-score--high {
+  background: rgba(76, 175, 80, 0.12);
+  color: #4caf50;
+}
+
+.sa-carbon-score--medium {
+  background: rgba(245, 159, 10, 0.12);
+  color: #f59f0a;
+}
+
+.sa-carbon-score--low {
+  background: rgba(239, 67, 67, 0.1);
+  color: #ef4343;
+}
+
+/* Score bar cell */
+.sa-carbon-bar-cell {
+  min-width: 90px;
+}
+
+.sa-carbon-bar-track {
+  height: 6px;
+  background: var(--border-light, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+  width: 90px;
+}
+
+.sa-carbon-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Reduction badge */
+.sa-carbon-reduction-cell {
+  white-space: nowrap;
+}
+
+.sa-carbon-reduction-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Drawer icon for carbon */
+.sa-carbon-drawer-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.12);
+  color: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .sa-carbon-bar-track {
+    width: 60px;
+  }
+}
